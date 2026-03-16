@@ -1,0 +1,140 @@
+﻿field_name,description,data_type,data_category,channel,can_be_negative
+Date,"The date for which data is provided. 
+Could be start of week, or month, or quarter.",Date,Date,na,No
+Sales_Qty,The count of items sold,Absolute,Sales,na,No
+Sales_Revenue,The revenue obtained out of sold items,Absolute,Sales,na,No
+Price_OR_UnitMargin,Average selling price (preferably weighted average),Absolute,Price,na,No
+Region,Region for which the sales and spends is provided,Categorical,Grain,na,No
+Brand,Brand for which the sales and spends is provided,Categorical,Grain,na,No
+Category,Category for which the sales and spends is provided,Categorical,Grain,na,No
+Promo_Offer_Flag,"Flag as 1 if some promotional offer is going on in that time period, else 0",Binary,Promo,na,No
+CPI,Consumer Price Index - to capture macro economic factor,Rate,Macro,na,Yes
+Inflation,Inflation percentage - to capture macro economic factor,Percentage,Macro,na,Yes
+TV_Spend,Marketing spend made on TV,Absolute,Spend,TV,No
+TV_Ad_Spot_Count,Total ad spots given within the time period,Absolute,Response,TV,No
+TV_GRP_TRP,Metric for TV ad efficiency/audience reached. Reach (%) × Frequency.,Rate,Response,TV,No
+Newspaper_Spend,Marketing spend made on Newspaper,Absolute,Spend,Newspaper,No
+Newspaper_Ad_Count,Total newspaper ads print within the time period,Absolute,Response,Newspaper,No
+Magazine_Spend,Marketing spend made on Magazine,Absolute,Spend,Magazine,No
+Magazine_Reach,Estimated reach of the magazine,Absolute,Response,Magazine,No
+Radio_Spend,Marketing spend made on Radio,Absolute,Spend,Radio,No
+Radio_Ad_Spot_Count,Total ad spots given within the time period,Absolute,Response,Radio,No
+Radio_Reach,Estimated audience reached,Absolute,Response,Radio,No
+Radio_GRP,GRP of the radio ad,Percentage,Response,Radio,No
+OOH_Billboards_Spend,Marketing spend made on Out of Home means like Billboards,Absolute,Spend,OOH Billboards,No
+Transit_Ads_Spend,"Ad spend made on transit vehicles, say, Metro, Bus, Truck, Auto",Absolute,Spend,Transit Ads,No
+Mall_Media_Spend,Marketing spend made on Out of Home means like Media,Absolute,Spend,Mall Media,No
+Mall_Footfall,Footfall at the mall on days of Ad/Promotion,Absolute,Response,Mall Media,No
+Cinema_Spend,Marketing spend made on Cinema Ads or Movie Hall Ads,Absolute,Spend,Cinema,No
+Cinema_Reach_Screening_Count,Reach of cinema or screening count,Absolute,Response,Cinema,No
+Facebook_Spend,Marketing spend made on Facebook,Absolute,Spend,Facebook,No
+Facebook_Impressions,Number of times a facebook post reached user's screen,Absolute,Response,Facebook,No
+Facebook_Clicks,Number of times an ad was clicked (even from same user),Absolute,Response,Facebook,No
+Facebook_Reach,Unique number of people/user who's screen was reached by the Facebook Ad/Post,Absolute,Response,Facebook,No
+Instagram_Spend,Marketing spend made on Instagram,Absolute,Spend,Instagram,No
+Instagram_Impressions,Number of times an Instagram post reached user's screen,Absolute,Response,Instagram,No
+Instagram_Clicks,Number of times an ad was clicked (even from same user),Absolute,Response,Instagram,No
+Instagram_Saves,Number of saves for a post/ad/reel,Absolute,Response,Instagram,No
+Instagram_Shares,Number of times a post/ad/reel was shared about the product,Absolute,Response,Instagram,No
+Instagram_Reach,Unique number of people/user who's screen was reached by the Instagram Ad/Post/Reel,Absolute,Response,Instagram,No
+Tiktok_Spend,Marketing spend made on Tiktok,Absolute,Spend,Tiktok,No
+Tiktok_Impressions,Number of times a Tiktok Ad reached user's screen,Absolute,Response,Tiktok,No
+Tiktok_Clicks,Number of times an ad was clicked (even from same user),Absolute,Response,Tiktok,No
+Tiktok_Reach,Unique number of people/user who's screen was reached by the Tiktok Ad/Video,Absolute,Response,Tiktok,No
+Snapchat_Spend,Marketing spend made on Snapchat,Absolute,Spend,Snapchat,No
+Snapchat_Impressions,Number of times a Snapchat Ad reached user's screen,Absolute,Response,Snapchat,No
+Snapchat_Clicks,Number of times an ad was clicked (even from same user),Absolute,Response,Snapchat,No
+Snapchat_Reach,Unique number of people/user who's screen was reached by the Snapchat Ad,Absolute,Response,Snapchat,No
+LinkedIn_Spend,Marketing spend made on LinkedIn,Absolute,Spend,LinkedIn,No
+LinkedIn_Impressions,Number of times a LinkedIn post reached user's screen,Absolute,Response,LinkedIn,No
+LinkedIn_Clicks,Number of times an ad was clicked (even from same user),Absolute,Response,LinkedIn,No
+LinkedIn_Reach,Unique number of people/user who's screen was reached by the LinkedIn Ad/Post,Absolute,Response,LinkedIn,No
+Twitter_Spend,Marketing spend made on Twitter,Absolute,Spend,Twitter,No
+Twitter_Impressions,Number of times a Twitter post reached user's screen,Absolute,Response,Twitter,No
+Twitter_Clicks,Number of times an ad was clicked (even from same user),Absolute,Response,Twitter,No
+Twitter_Reach,Unique number of people/user who's screen was reached by the Twitter Ad/Tweet,Absolute,Response,Twitter,No
+YouTube_Spend,Marketing spend made on YouTube,Absolute,Spend,YouTube,No
+YouTube_Impressions,Number of times a YouTube Ad/Video reached user's screen,Absolute,Response,YouTube,No
+YouTube_Views,Number of times users watch the video for some specified min duration,Absolute,Response,YouTube,No
+YouTube_Likes,"Number of likes on the YouTube video with ad, or which is an ad",Absolute,Response,YouTube,No
+YouTube_Shares,"Number of shares of the YouTube video with ad, or which is an ad",Absolute,Response,YouTube,No
+Pinterest_Spend,Marketing spend made on Pinterest,Absolute,Spend,Pinterest,No
+Pinterest_Saves,Number of people who saved the pinterest idea/post,Absolute,Response,Pinterest,No
+Pinterest_Clicks,Number of times an ad was clicked (even from same user),Absolute,Response,Pinterest,No
+OTT_Ads_Spend,Marketing spend made for advertisement on an OTT platform,Absolute,Spend,OTT,No
+OTT_CompletedViews,Number of viewers who viewed the whole ad/didn't skip the ad,Absolute,Response,OTT,No
+OTT_Impressions,Number of times an OTT Ad reached user's screen,Absolute,Response,OTT,No
+Google_Search_Spend,Marketing spend made on google search pages,Absolute,Spend,Google Search,No
+Google_Search_Clicks,Number of times an ad was clicked (even from same user),Absolute,Response,Google Search,No
+Google_Search_Impressions,Number of times a Google Search Ad reached user's screen,Absolute,Response,Google Search,No
+Google_Search_Conversion_Perc,% times the ad resulted in a conversion (final purchase),Percentage,Response,Google Search,No
+Google_Search_Conversions,Number of times the ad resulted in a conversion (final purchase),Absolute,Response,Google Search,No
+Google_Shopping_Ad_Spend,Marketing spend made on google shopping Ad,Absolute,Spend,Google Shopping,No
+Google_Shopping_Clicks,Number of times an ad was clicked (even from same user),Absolute,Response,Google Shopping,No
+Google_Shopping_Impressions,Number of times a Google Shopping post reached user's screen,Absolute,Response,Google Shopping,No
+Google_Shopping_Conversion_Perc,% times the ad resulted in a conversion (final purchase),Percentage,Response,Google Shopping,No
+Google_Shopping_Conversions,Number of times the ad resulted in a conversion (final purchase),Absolute,Response,Google Shopping,No
+Programmatic_Display_Ad_Spend,Marketing spend made on Programmatic display Ad,Absolute,Spend,Programmatic Display,No
+Programmatic_Display_Ad_Clicks,Number of times an ad was clicked (even from same user),Absolute,Response,Programmatic Display,No
+Programmatic_Display_Ad_Impressions,Number of times an Ad throuugh Programmatic Display reached user's screen,Absolute,Response,Programmatic Display,No
+Programmatic_Display_Ad_Reach,Unique number of people/user who's screen was reached by the Ad display through the programmatic Ad investment,Absolute,Response,Programmatic Display,No
+Amazon_Ads_Spend,Marketing spend made on Amazon,Absolute,Spend,Amazon,No
+Amazon_Impressions,Number of times an Amazon Ad reached user's screen,Absolute,Response,Amazon,No
+Amazon_Clicks,Number of times an ad was clicked (even from same user),Absolute,Response,Amazon,No
+Amazon_Conversion_Perc,% times the ad resulted in a conversion (final purchase),Percentage,Response,Amazon,No
+Amazon_Conversions,Number of times the ad resulted in a conversion (final purchase),Absolute,Response,Amazon,No
+Flipkart_Ads_Spend,Marketing spend made on Flipkart,Absolute,Spend,Flipkart,No
+Flipkart_Impressions,Number of times a Flipkart Ad reached user's screen,Absolute,Response,Flipkart,No
+Flipkart_Clicks,Number of times an ad was clicked (even from same user),Absolute,Response,Flipkart,No
+Flipkart_Conversion_Perc,% times the ad resulted in a conversion (final purchase),Percentage,Response,Flipkart,No
+Flipkart_Conversions,Number of times the ad resulted in a conversion (final purchase),Absolute,Response,Flipkart,No
+E_Commerce_Ad_Spend,Marketing spend made on E-Commerce platforms,Absolute,Spend,E Commerce,No
+E_Commerce_Impressions,Number of times an Ad on some E-Commerce platform reached user's screen,Absolute,Response,E Commerce,No
+E_Commerce_Clicks,Number of times an ad was clicked (even from same user),Absolute,Response,E Commerce,No
+E_Commerce_Conversion_Perc,% times the ad resulted in a conversion (final purchase),Percentage,Response,E Commerce,No
+E_Commerce_Conversions,Number of times the ad resulted in a conversion (final purchase),Absolute,Response,E Commerce,No
+Quick_Commerce_Ad_Spend,Marketing spend made on Quick Commerce Platform Ads,Absolute,Spend,Quick Commerce,No
+Quick_Commerce_Conversion_Perc,% times the ad resulted in a conversion (final purchase),Percentage,Response,Quick Commerce,No
+Quick_Commerce_Conversions,Number of times the ad resulted in a conversion (final purchase),Absolute,Response,Quick Commerce,No
+Quick_Commerce_Impression,Number of times an Ad on some Quick-Commerce platform reached user's screen,Absolute,Response,Quick Commerce,No
+Influencer_Marketing_Spend,Spend made on Influencer Marketing,Absolute,Spend,Influencer,No
+Influencer_Impressions,Number of times an Influencer post reached user's screen,Absolute,Response,Influencer,No
+Influencer_Reach,Unique number of people/user who's screen was reached by the Influencer's post for the product promo,Absolute,Response,Influencer,No
+Influencer_Views,Number of times users watch the post/reel/ad for some specified min duration,Absolute,Response,Influencer,No
+Influencer_Engagements,"Total engagements on the post/reel/ad by the influencer including likes, share, save views",Absolute,Response,Influencer,No
+App_Store_Ads_Spend,Marketing spend made for advertisement on app store,Absolute,Spend,App Store,No
+App_Store_Clicks,Number of times an ad was clicked (even from same user),Absolute,Response,App Store,No
+App_Store_Installs,number of app installs that can be attributed to the ad,Absolute,Response,App Store,No
+App_Store_Impressions,Number of times an ad on App Store reached user's screen,Absolute,Response,App Store,No
+Email_Marketing_Spend,Marketing spend made through Email Ads,Absolute,Spend,Email,No
+Email_Sent,Number of emails sent,Absolute,Response,Email,No
+Email_Delivered_Rate,% of people whom the ad was delivered on Email,Percentage,Response,Email,No
+Email_Delivered_Count,Number of people whom the ad was delivered on Email,Absolute,Response,Email,No
+Email_Read_Rate,% of people who read the ad sent via Email,Percentage,Response,Email,No
+Email_Read_Count,Number of people who read the ad sent via Email,Absolute,Response,Email,No
+SMS_Spend,Marketing spend made through SMS,Absolute,Spend,SMS,No
+SMS_Sent,Number of marketing SMS sent,Absolute,Response,SMS,No
+SMS_Delivered_Count,Number of people whom the ad was delivered on SMS,Absolute,Response,SMS,No
+SMS_Delivered_Rate,% of people whom the ad was delivered on SMS,Percentage,Response,SMS,No
+SMS_Read_Rate,% of people who read the ad sent on SMS,Percentage,Response,SMS,No
+SMS_Read_Count,Number of people who read the ad sent on SMS,Absolute,Response,SMS,No
+Whatsapp_Spend,Marketing spend made through Whatsapp,Absolute,Spend,Whatsapp,No
+Whatsapp_Sent,Number of marketing WhatsApp messages sent,Absolute,Response,Whatsapp,No
+Whatsapp_Delivered_Count,Number of people whom the ad was delivered on whatsapp,Absolute,Response,Whatsapp,No
+Whatsapp_Read_Rate,% of people who read the ad sent on whatsapp,Percentage,Response,Whatsapp,No
+Loyalty_Program_Spend,Marketing spend made through launching loyalty programs,Absolute,Spend,Loyalty Program,No
+Loyalty_Program_Purchase,Number of purchases for the loyalty program,Absolute,Response,Loyalty Program,No
+Sponsorship_Partnership_Spend,Marketing spend made via Sponsorship or Partnerships or such Events,Absolute,Spend,Sponsorship Partnership,No
+Sponsorship_Partnership_Event_Attendance,Number of attendees in the sponsorship or partneship events where the ad were displayed,Absolute,Response,Sponsorship Partnership,No
+Swiggy_Spend,Marketing spend made on Swiggy,Absolute,Spend,Swiggy,No
+Swiggy_Impressions,Number of times an ad/Promo on Swiggy reached user's screen,Absolute,Response,Swiggy,No
+Swiggy_Clicks,Number of times an ad was clicked (even from same user),Absolute,Response,Swiggy,No
+Swiggy_Orders_Attributed,Number of orders that can be attributed to the ad/promo on Swiggy,Absolute,Response,Swiggy,No
+Zomato_Spend,Marketing spend made on Zomato,Absolute,Spend,Zomato,No
+Zomato_Impressions,Number of times an Ad/Promo on Zomato reached user's screen,Absolute,Response,Zomato,No
+Zomato_Clicks,Number of times an ad was clicked (even from same user),Absolute,Response,Zomato,No
+Zomato_Orders_Attributed,Number of orders that can be attributed to the ad/promo on Zomato,Absolute,Response,Zomato,No
+Food_Delivery_Ad_Spend,Marketing spend made on ads on Food Delivery apps,Absolute,Spend,Food Deliver App,No
+Food_Delivery_App_Impressions,Number of times an Ad/Promo on Food Delivery App reached user's screen,Absolute,Response,Food Deliver App,No
+Food_Delivery_App_Clicks,Number of times an ad was clicked (even from same user),Absolute,Response,Food Deliver App,No
+Food_Delivery_App_Orders_Attributed,Number of orders that can be attributed to the ad/promo on food delivery apps,Absolute,Response,Food Deliver App,No
