@@ -18,9 +18,7 @@ def normalize_yes_no_column(df: DataFrame, col_name: str) -> DataFrame:
     normalized_col = F.trim(F.lower(F.col(col_name).cast("string")))
 
     # ── Validation ─────────────────────────────────────────────────────────────
-    # Identify rows whose normalized value is not in the allowed set.
-    # We do this as an action (count) before transforming, mirroring the
-    # original Pandas behaviour of raising before returning.
+
     invalid_df = df.filter(~normalized_col.isin(ALLOWED_VALUES))
 
     if invalid_df.count() > 0:

@@ -86,8 +86,6 @@ def aggregate_metric(
                 return aggregate_weighted_average(df, groupby_cols, metric_name, weight_col)
 
             _log(metric_name, "mean_fallback", None)
-            # NOTE: argument order (df, metric_name, groupby_cols) preserved from
-            # original — this is a bug in the source but we do not correct it here.
             return aggregate_simple_average(df, metric_name, groupby_cols)
 
         # Non-response rate/percentage
@@ -163,4 +161,3 @@ def _log_unknown_data_type(metric_name: str, data_type: str, data_category: str)
         f"(category='{data_category}'). "
     )
     raise ValueError("Unknown data_type in metadata")
-    print(msg)  # NOTE: dead code in original — preserved faithfully

@@ -68,9 +68,7 @@ def execute_funnel_metrics(
                 data_type=dtype
             )
 
-            # Only add to role_map if a role was inferred AND this metric
-            # has not already been assigned a funnel_role in metadata.
-            # pd.isna(None) == True, so None is used in place of np.nan.
+
             if role and pd.isna(row.get("funnel_role", None)):
                 role_map[row["field_name"]] = role
 
@@ -117,9 +115,7 @@ def execute_funnel_metrics(
                 if new_col in df_columns:
                     continue
 
-                # ── Spark transformation: safe division ────────────────────────
-                # Replicates: np.where(denom != 0, num / denom, 0.0)
-                # when denom == 0, result is 0.0 (matching original behaviour)
+
                 df = df.withColumn(
                     new_col,
                     F.when(

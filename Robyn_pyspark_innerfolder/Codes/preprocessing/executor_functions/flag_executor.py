@@ -28,11 +28,6 @@ def execute_flag_normalization(
         if col not in df_columns:
             continue
 
-        # In Pandas the guard was `df[col].dtype == object` — meaning the
-        # column holds strings and hasn't already been normalised to integers.
-        # In PySpark the equivalent is checking for StringType in the schema.
-        # Numeric types (IntegerType, LongType, etc.) are skipped, matching
-        # the original intent exactly.
         if not isinstance(df.schema[col].dataType, StringType):
             continue
 

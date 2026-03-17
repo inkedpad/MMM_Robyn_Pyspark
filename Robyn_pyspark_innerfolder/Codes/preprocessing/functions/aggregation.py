@@ -37,7 +37,7 @@ def aggregate_weighted_average(df: DataFrame, group_by, value_col: str, weight_c
 
     result = result.drop('weighted_sum', 'weight_sum', 'basic_mean')
 
-    print("WEEIIGGHHHTTT SUMMM:::::::::::")
+
     result.show()
 
     return result

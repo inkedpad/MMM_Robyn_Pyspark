@@ -63,7 +63,7 @@ def _shape(df: DataFrame) -> tuple:
 # Load raw data
 # --------------------------------------------------
 
-print("\n[PIPELINE] Loading raw data...")
+
 
 df_raw = (
     spark.read
@@ -80,15 +80,14 @@ df_raw = _normalize_columns(df_raw)
 GROUPBY_COLS = [c.lower() for c in GROUPBY_COLS]
 DATE_COL     = DATE_COL.lower()
 
-print("\n[PIPELINE] Raw data loaded...")
-print(_shape(df_raw))
+
 
 
 # --------------------------------------------------
 # Load metric metadata
 # --------------------------------------------------
 
-print("\n[PIPELINE] Loading metric metadata...")
+
 
 # load_metric_metadata returns a Pandas DataFrame — intentional and permanent.
 # Metadata is a small driver-side config table used for dispatch logic in
@@ -100,14 +99,14 @@ df_metadata = load_metric_metadata(source=METADATA_PATH, spark=spark)
 # df_raw.columns is a plain Python list in PySpark — .isin() works identically.
 df_metadata = df_metadata[df_metadata["field_name"].isin(df_raw.columns)]
 
-print("\n[PIPELINE] Metric metadata loaded...")
+
 
 
 # --------------------------------------------------
 # Step 1 — Outlier Treatment (on raw data, pre-continuity)
 # --------------------------------------------------
 
-print("\n[PIPELINE] Preprocessing (Outliers) started...")
+
 
 df_outlier_treated = run_outlier_post_aggregation(
     df=df_raw,
@@ -116,15 +115,13 @@ df_outlier_treated = run_outlier_post_aggregation(
     date_col=DATE_COL          # added in PySpark conversion for window ordering
 )
 
-print("\n[PIPELINE] Preprocessing (Outliers) completed...")
-print("df_outlier_treated", _shape(df_outlier_treated))
 
 
 # --------------------------------------------------
 # Step 2 — Enforce Date Continuity
 # --------------------------------------------------
 
-print("\n[PIPELINE] Preprocessing (Enforcing Continuity) started...")
+
 
 df_continuity_enforced = run_date_continuity(
     raw_df=df_outlier_treated,
@@ -133,15 +130,14 @@ df_continuity_enforced = run_date_continuity(
     frequent=START_FREQ
 )
 
-print("df_continuity_enforced", _shape(df_continuity_enforced))
-print("\n[PIPELINE] Preprocessing (Enforcing Continuity) completed...")
+
 
 
 # --------------------------------------------------
 # Step 3 — Missing Value Imputation
 # --------------------------------------------------
 
-print("\n[PIPELINE] Preprocessing (Missing Value Imputation) started...")
+
 
 df_missing_imputed = run_missing_value_post_outlier(
     df=df_continuity_enforced,
@@ -150,15 +146,11 @@ df_missing_imputed = run_missing_value_post_outlier(
     date_col=DATE_COL          # added in PySpark conversion for window ordering
 )
 
-print("df_missing_imputed", _shape(df_missing_imputed))
-print("\n[PIPELINE] Preprocessing (Missing Value Imputation) completed...")
-
 
 # --------------------------------------------------
 # Step 4 — Aggregation
 # --------------------------------------------------
 
-print("\n[PIPELINE] Running preprocessing (Aggregation)...")
 
 df_agg = run_agg_preprocessing(
     raw_df=df_missing_imputed,
@@ -169,44 +161,29 @@ df_agg = run_agg_preprocessing(
     end_freq=END_FREQ
 )
 
-print("df_agg", _shape(df_agg))
-print("\n[PIPELINE] Preprocessing (Aggregation) completed...")
-
-# Replaces: print(df_agg.columns) — works identically, df.columns is a Python list
-print(df_agg.columns)
-
-# Replaces: print(df_agg.head(5))
-df_agg.show(5)
 
 
 # --------------------------------------------------
 # Step 5 — Funnel Metrics
 # --------------------------------------------------
 
-print("\n[PIPELINE] Creating funnel metrics...")
+
 
 # execute_funnel_metrics returns:
 #   df_agg       → Spark DataFrame  (main data with derived ratio columns added)
 #   new_metadata → Pandas DataFrame (metadata with new derived metric rows appended)
 df_agg, new_metadata = execute_funnel_metrics(df_agg, df_metadata)
 
-print("df_agg", _shape(df_agg))
-print("\n[PIPELINE] Funnel metrics created...")
-
-
 # --------------------------------------------------
 # Step 6 — Candidate Narrowing
 # --------------------------------------------------
 
-print("\n[PIPELINE] Candidate narrowing...")
 
 # NOTE: execute_candidate_narrowing was not part of this conversion session.
 # If its internals expect a Pandas DataFrame, replace df_agg with df_agg.toPandas().
 # If it has been independently converted to PySpark, pass df_agg directly.
 registry = execute_candidate_narrowing(df=df_agg, metadata_df=new_metadata)
 
-print(registry)
-print("[PIPELINE] Candidate narrowing done.")
 
 
 # --------------------------------------------------
@@ -232,7 +209,6 @@ new_metadata.to_csv(OUTPUT_META_PATH, index=False)
 with open(OUTPUT_REGISTRY_PATH, "w") as f:
     json.dump(registry, f, indent=2)
 
-print("[PIPELINE] Outputs saved.")
 
 
 # --------------------------------------------------
@@ -242,8 +218,3 @@ print("[PIPELINE] Outputs saved.")
 # _shape() called once and reused — avoids triggering two count() actions
 agg_shape = _shape(df_agg)
 
-print("\n========== PIPELINE COMPLETE ==========")
-print("Final Data Shape:", agg_shape)
-print("Metadata Rows   :", len(new_metadata))       # new_metadata is Pandas — len() unchanged
-print("Channels        :", list(registry["channels"].keys()))  # pure Python dict — unchanged
-print("======================================\n")

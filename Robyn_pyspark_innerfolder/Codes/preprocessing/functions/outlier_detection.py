@@ -16,9 +16,6 @@ def iqr_outlier_mask(
     Adds a boolean column `mask_col` that is True where the value is an
     IQR outlier within its partition, False otherwise.
 
-    `quantile_accuracy` controls the accuracy of percentile_approx:
-    higher = more accurate, at a small memory cost.
-    1_000_000 gives results effectively identical to Pandas .quantile().
     """
 
     window = Window.partitionBy(partition_cols)

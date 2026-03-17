@@ -30,11 +30,6 @@ def execute_missing_value_treatment(
 
     print(f"[MISSING] Grouping by: {partition_cols} (Date excluded for time-series imputation)")
 
-    # --------------------------------------------------
-    # Build driver-side metadata lookup dicts
-    # All filtering is on the small Pandas metadata table
-    # --------------------------------------------------
-
     spend_by_channel = (
         metadata_df[
             (metadata_df["data_category"].str.lower() == "spend") &
@@ -112,12 +107,6 @@ def execute_missing_value_treatment(
 
     # --------------------------------------------------
     # 3. PRICE → forward fill THEN back fill (group-wise)
-    # New version: ffill().bfill() — back fill added to handle leading nulls
-    # that forward fill cannot reach.
-    # ffill: last non-null value preceding current row within partition
-    # bfill: first non-null value following current row within partition
-    # Applied in sequence: bfill is run on the ffill result, so it only
-    # fills nulls that ffill left behind (leading nulls at partition start).
     # --------------------------------------------------
     ffill_window = (
         Window
