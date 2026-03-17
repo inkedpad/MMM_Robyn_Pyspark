@@ -1,15 +1,15 @@
 ﻿field_name,description,data_type,data_category,channel,can_be_negative
 Date,"The date for which data is provided. 
-Could be start of week, or month, or quarter.",Date,Date,na,No
-Sales_Qty,The count of items sold,Absolute,Sales,na,No
-Sales_Revenue,The revenue obtained out of sold items,Absolute,Sales,na,No
-Price_OR_UnitMargin,Average selling price (preferably weighted average),Absolute,Price,na,No
-Region,Region for which the sales and spends is provided,Categorical,Grain,na,No
-Brand,Brand for which the sales and spends is provided,Categorical,Grain,na,No
-Category,Category for which the sales and spends is provided,Categorical,Grain,na,No
-Promo_Offer_Flag,"Flag as 1 if some promotional offer is going on in that time period, else 0",Binary,Promo,na,No
-CPI,Consumer Price Index - to capture macro economic factor,Rate,Macro,na,Yes
-Inflation,Inflation percentage - to capture macro economic factor,Percentage,Macro,na,Yes
+Could be start of week, or month, or quarter.",Date,Date,x,No
+Sales_Qty,The count of items sold,Absolute,Sales,x,No
+Sales_Revenue,The revenue obtained out of sold items,Absolute,Sales,x,No
+Price_OR_UnitMargin,Average selling price (preferably weighted average),Absolute,Price,x,No
+Region,Region for which the sales and spends is provided,Categorical,Grain,x,No
+Brand,Brand for which the sales and spends is provided,Categorical,Grain,x,No
+Category,Category for which the sales and spends is provided,Categorical,Grain,x,No
+Promo_Offer_Flag,"Flag as 1 if some promotional offer is going on in that time period, else 0",Binary,Promo,x,No
+CPI,Consumer Price Index - to capture macro economic factor,Rate,Macro,x,Yes
+Inflation,Inflation percentage - to capture macro economic factor,Percentage,Macro,x,Yes
 TV_Spend,Marketing spend made on TV,Absolute,Spend,TV,No
 TV_Ad_Spot_Count,Total ad spots given within the time period,Absolute,Response,TV,No
 TV_GRP_TRP,Metric for TV ad efficiency/audience reached. Reach (%) × Frequency.,Rate,Response,TV,No
